@@ -1,6 +1,6 @@
 import 'dotenv/config';
 import jwt, { SignOptions } from 'jsonwebtoken';
-import User from '../types/User';
+import { User } from '../types/User';
 
 const JWT_SECRET = process.env.JWT_SECRET || 'default';
 

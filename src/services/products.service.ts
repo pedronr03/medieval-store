@@ -8,6 +8,10 @@ class ProductService {
   create(productData: IProduct) {
     return this.productsModel.create(productData);
   }
+
+  getAll() {
+    return this.productsModel.getAll();
+  }
 }
 
 export default ProductService;
