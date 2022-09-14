@@ -7,6 +7,7 @@ class CustomError extends Error {
     super(message);
     this.code = code;
     this.status = status;
+    Object.setPrototypeOf(this, CustomError.prototype);
   }
 }
 

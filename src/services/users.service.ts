@@ -7,8 +7,8 @@ class UsersService {
   constructor(private readonly usersModel = new UsersModel(connection)) {}
 
   async create(userData: IUser) {
-    await this.usersModel.create(userData);
-    const token = sign(userData);
+    const user = await this.usersModel.create(userData);
+    const token = sign({ password: user.password, username: user.username });
     return token;
   }
 }

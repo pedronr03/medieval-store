@@ -1,6 +1,6 @@
 import 'dotenv/config';
 import jwt, { SignOptions } from 'jsonwebtoken';
-import { IUser } from '../types/User';
+import { UserCredentials } from '../types/User';
 
 const JWT_SECRET = process.env.JWT_SECRET || 'default';
 
@@ -9,7 +9,7 @@ const JWT_CONFIG: SignOptions = {
   algorithm: 'HS256',
 };
 
-export const sign = (data: IUser) => {
+export const sign = (data: UserCredentials) => {
   const token = jwt.sign(data, JWT_SECRET, JWT_CONFIG);
   return token;
 };
