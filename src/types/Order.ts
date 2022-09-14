@@ -1,6 +1,6 @@
 export type IOrder = {
   userId: number,
-  productsId: number[]
+  productsIds: number[]
 };
 
 export type Order = {

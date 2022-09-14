@@ -7,6 +7,10 @@ class OrdersService {
   getAll() {
     return this.ordersModel.getAll();
   }
+
+  create(username: string, productsIds: number[]) {
+    return this.ordersModel.create(username, productsIds);
+  }
 }
 
 export default OrdersService;

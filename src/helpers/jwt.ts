@@ -14,11 +14,8 @@ export const sign = (data: UserCredentials) => {
   return token;
 };
 
-export const decode = (token: string) => {
-  const decodeToken = jwt.verify(
-    token, 
-    JWT_SECRET,
-    (err, result) => (err ? 'Invalid' : result),
-  );
-  return decodeToken;
+export const verify = (token: string) => {
+  jwt.verify(token, JWT_SECRET);
+  const decodedPayload = jwt.decode(token);
+  return decodedPayload || null;
 };

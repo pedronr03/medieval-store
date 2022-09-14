@@ -1,4 +1,6 @@
+import httpStatusCode from 'http-status-codes';
 import { NextFunction, Request, Response } from 'express';
+import { JsonWebTokenError } from 'jsonwebtoken';
 import CustomError from '../errors/CustomError';
 
 const errorMiddleware = (err: Error, _req: Request, res: Response, _next: NextFunction) => {
@@ -8,6 +10,13 @@ const errorMiddleware = (err: Error, _req: Request, res: Response, _next: NextFu
     return res.status(err.status).json({
       message: err.message,
       code: err.code,
+    });
+  }
+
+  if (err instanceof JsonWebTokenError) {
+    return res.status(httpStatusCode.UNAUTHORIZED).json({
+      message: 'Invalid token',
+      code: 'UNAUTHORIZED',
     });
   }
 
