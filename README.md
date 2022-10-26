@@ -8,6 +8,7 @@ This project is a REST API and was created with the objective of managing a medi
 docker compose up -d
 ```
 ### Built with:
+- [Docker](https://www.docker.com/)
 - [Node.js](https://nodejs.org/en/)
 - [Typescript](https://www.typescriptlang.org/)
 - [Express](https://expressjs.com/pt-br/)
