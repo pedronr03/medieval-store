@@ -5,7 +5,7 @@ This project is a REST API and was created with the objective of managing a medi
 - Clone the repository.
 - Run the following commands:
 ```
-docker compose up -d
+docker-compose up -d
 ```
 ### Built with:
 - [Docker](https://www.docker.com/)
